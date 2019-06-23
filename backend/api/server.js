@@ -12,6 +12,7 @@ const assignmentRoute = require('../api/route/assignmentRoute');
 const materialRoute = require('../api/route/materialRoute');
 const msgRoutes = require('../api/route/msgRoutes');
 
+
 mongoose.Promise = global.Promise;
 mongoose.connect(config.DB, { useNewUrlParser: true }).then(
     () => {console.log('Database is connected') },
@@ -27,6 +28,7 @@ app.use('/student', studentRoute);
 app.use('/assignment', assignmentRoute);
 app.use('/material', materialRoute);
 app.use('/msg', msgRoutes);//first give this
+
 
 
 app.listen(PORT, function(){

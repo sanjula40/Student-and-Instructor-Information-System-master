@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
 
 const fileFilter = (req, file, cb) => {
 
-    if (file.mimetype === 'image/jpeg' || file.mimetype === 'application/pdf' || file.mimetype === 'application/zip' || file.mimetype ==='application/msword') {
+    if (file.mimetype === 'image/jpeg' || file.mimetype === 'application/pdf' || file.mimetype === 'application/zip' || file.mimetype ==='application/msword' || file.mimetype ==='application/x-rar-compressed' || file.mimetype ==='application/octet-stream' || file.mimetype ==='application/x-zip-compressed' || file.mimetype ==='multipart/x-zip' ) {
         cb(null, true);
     } else {
         cb(null, false);

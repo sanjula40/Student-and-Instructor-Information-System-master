@@ -11,6 +11,7 @@ import AddNewMsg from './LecturerDashboard/AddNewMsg';
 import GetAllMsg from './LecturerDashboard/GetAllMsg';
 import updateMsg from './LecturerDashboard/updateMsg';
 
+
 const Main = () => (
     <Switch>
         <Route exact path="/" component={HomePage} />
@@ -23,6 +24,7 @@ const Main = () => (
         <Route path="/AddNewMsg" component={AddNewMsg} />
         <Route path="/GetAllMsg" component={GetAllMsg} />
         <Route path="/updateMsg/:id" component={updateMsg} />
+
     </Switch>
 )
 
