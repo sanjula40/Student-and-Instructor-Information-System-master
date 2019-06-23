@@ -37,7 +37,7 @@ export default class GetAllMsg extends Component{
                 <table>
                     <thead>
                     <tr>
-                        <th>Message title</th>
+                        <th>Message Title</th>
                         <th>Message</th>
                         <th>Update</th>
                     </tr>
