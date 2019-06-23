@@ -69,7 +69,7 @@ export default class GetAllMsg extends Component{
                                 <td>{msgs.msg_title}</td>
                                 <td>{msgs.msg_description}</td>
                                 <td><a href={"/updateMsg/"+msgs._id}><button>Edit</button></a>
-                                    <button onClick={() => { this.handleClick(msgs._id) }} className="delete-btn">Delete</button>
+                                    <button onClick={() => { this.handleClick(msgs._id) }}  className="delete-btn">Delete</button>
                                 </td>
                             </tr>
                         )

@@ -22,7 +22,7 @@ const Main = () => (
         <Route path="/AddMaterial" component={AddMaterial} />
         <Route path="/AddNewMsg" component={AddNewMsg} />
         <Route path="/GetAllMsg" component={GetAllMsg} />
-        <Route path="/updateMsg" component={updateMsg} />
+        <Route path="/updateMsg/:id" component={updateMsg} />
     </Switch>
 )
 

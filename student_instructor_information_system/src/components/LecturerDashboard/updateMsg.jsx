@@ -7,7 +7,6 @@ export default class updateMsg extends Component{
 
         this.onChangeMsg_title = this.onChangeMsg_title.bind(this);
         this.onChangeMsg_description = this.onChangeMsg_description.bind(this);
-        this.onDelete = this.onDelete.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.state = {
             _id:'',
@@ -27,12 +26,14 @@ export default class updateMsg extends Component{
     }
 
    componentDidMount() {
+
         console.log(this.props.match.params.id);
-        axios.get('http://localhost:4000/msg/:id' + this.props.match.params.id )
+        axios.get('http://localhost:4000/msg/' + this.props.match.params.id )
 
             .then(res => {
+                console.log(res.data.msg);
                 this.setState({
-                    _id: this.props.match.params.id,
+                    _id: res.data.msg._id,
                     msg_title: res.data.msg.msg_title,
                     msg_description: res.data.msg.msg_description
                 })
@@ -45,18 +46,11 @@ export default class updateMsg extends Component{
             msg_title : this.state.msg_title,
             msg_description : this.state.msg_description
         }
-        axios.put('http://localhost:4000/msg/edit/:id' + this.props.match.params.id ,obj)
+        axios.put('http://localhost:4000/msg/update/' + this.props.match.params.id ,obj)
             .then(res => window.location.href = "/GetAllMsg");
 
     }
 
-    onDelete() {
-        console.log(this.props.match.params.id );
-        axios.delete('http://localhost:4000/msg/delete/:id'+ this.props.match.params.id )
-            .then(console.log('Deleted'))
-            .catch(err => console.log(err));
-        window.location.href = "/GetAllMsg";
-    }
 
     render() {
         return(
@@ -85,7 +79,6 @@ export default class updateMsg extends Component{
                     </tr>
                     <br/>
                     <tr><td><input type="submit" value="Update" onClick={this.onSubmit}/></td>
-                    <td><button onClick={this.delete}>Delete</button></td>
                     </tr>
                 </form>
 

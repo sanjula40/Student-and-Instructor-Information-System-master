@@ -33,7 +33,7 @@ msgRoutes.route('/:id').get((req,res) => {
 });
 
 
-
+/*
 msgRoutes.put('/edit/:id', (req, res, next) => {
     console.log(req.params);
     console.log(req.body);
@@ -51,7 +51,18 @@ msgRoutes.put('/edit/:id', (req, res, next) => {
             });
         });
 });
+*/
 
+
+msgRoutes.put('/update/:id',(req,res)=>{
+    //const user = new UserModel(req.body);
+    Msg.findByIdAndUpdate({_id:req.params.id},req.body,(err,response)=>{
+        if(err){
+            res.json({message:"PUT error"});
+        }
+        res.json(response);
+    });
+});
 
     msgRoutes.route('/delete/:id').delete(function (req, res) {
     Msg.findByIdAndRemove({_id: req.params.id}, function(err, msg){

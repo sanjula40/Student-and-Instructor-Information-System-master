@@ -79,6 +79,7 @@ export default class AddNewMsg extends Component{
                     <tr><td><input type="submit" value="Add" onClick={this.onSubmit}/></td></tr>
 
                 </form>
+                    <a href="/GetAllMsg" ><button>All Messages</button></a>
                 </table>
             </div>
         )
