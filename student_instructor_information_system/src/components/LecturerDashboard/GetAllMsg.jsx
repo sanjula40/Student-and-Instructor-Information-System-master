@@ -5,7 +5,7 @@ import axios, {AxiosRequestConfig as res} from 'axios';
 export default class GetAllMsg extends Component{
     constructor(props){
         super(props);
-        this.onDelete = this.onDelete.bind(this);
+        //this.onDelete = this.onDelete.bind(this);
         this.state={
             msgs:[]
         }
