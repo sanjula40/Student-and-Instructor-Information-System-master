@@ -10,6 +10,21 @@ export default class GetAllMsg extends Component{
             msgs:[]
         }
     }
+
+    handleClick = msgID => {
+        const requestOptions = {
+            method: 'DELETE'
+        };
+
+        fetch("http://localhost:4000/msg/delete/" + msgID, requestOptions).then((response) => {
+            return response.json();
+        }).then((result) => {
+            console.log('Deleted')
+            // do what you want with the response here
+        });
+        window.location.href = "/GetAllMsg";
+    }
+
     componentDidMount() {
         axios.get('http://localhost:4000/msg/msgs')
             .then( res => {
@@ -20,15 +35,20 @@ export default class GetAllMsg extends Component{
             });
     }
 
-    onDelete(e) {
-
-        axios.delete(`http://localhost:4000/msg/delete/${e.target.value}`)
-            .then(res => {
-                console.log(res.data.msg._id);
-            });
-        window.location.reload();
+    /*
+    onDelete() {
+        const obj = {
+            _id : this.state._id,
+            msg_title : this.state.msg_title,
+            msg_description : this.state.msg_description
+        }
+        console.log(obj._id);
+        axios.delete('http://localhost:4000/msg/delete/:id'+obj._id)
+            .then(console.log('Deleted'))
+            .catch(err => console.log(err));
+        window.location.href = "/GetAllMsg";
     }
-
+*/
 
     render() {
         return(
@@ -37,7 +57,7 @@ export default class GetAllMsg extends Component{
                 <table>
                     <thead>
                     <tr>
-                        <th>Message Title</th>
+                        <th>Message title</th>
                         <th>Message</th>
                         <th>Update</th>
                     </tr>
@@ -49,7 +69,7 @@ export default class GetAllMsg extends Component{
                                 <td>{msgs.msg_title}</td>
                                 <td>{msgs.msg_description}</td>
                                 <td><a href={"/updateMsg/"+msgs._id}><button>Edit</button></a>
-                                    <button type="submit" onClick={this.onDelete} value={msgs._id}>Delete</button>
+                                    <button onClick={() => { this.handleClick(msgs._id) }} className="delete-btn">Delete</button>
                                 </td>
                             </tr>
                         )
