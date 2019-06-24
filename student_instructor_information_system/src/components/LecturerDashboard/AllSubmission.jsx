@@ -79,7 +79,10 @@ export default class AllSubmission extends Component{
                                 <td>{submission.date}</td>
                                 <td>{submission.description}</td>
                                 <td><a href={"/UpdateSub/"+submission._id}><button>Edit</button></a>
-                                    <button onClick={() => { this.handleClick(submission._id) }}  className="delete-btn">Delete</button>
+                                    <button onClick={() => {
+                                        window.confirm('Are you sure you wish to delete this item?')
+                                        this.handleClick(submission._id)
+                                    }}  className="delete-btn">Delete</button>
                                 </td>
                             </tr>
                         )

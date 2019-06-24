@@ -154,8 +154,8 @@ export default class UpdateSub extends Component{
 
 
                     <br/>
-                    <a href="/AddSubmission" ><button>Add Messages</button></a>
-                    <a href="/AllSubmission" ><button>All Messages</button></a>
+                    <a href="/AddSubmission" ><button>Add New One</button></a>
+                    <a href="/AllSubmission" ><button>All Assignments</button></a>
                 </table>
             </div>
         )
