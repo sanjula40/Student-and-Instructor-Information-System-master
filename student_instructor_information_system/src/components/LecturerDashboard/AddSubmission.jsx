@@ -142,7 +142,7 @@ export default class AddSubmission extends Component{
                         <tr><td><input type="submit" value="Add" onClick={this.onSubmit}/></td></tr>
 
                     </form>
-                    <a href="/" ><button>All Assignments</button></a>
+                    <a href="/AllSubmission" ><button>All Submissions</button></a>
                 </table>
             </div>
         )
