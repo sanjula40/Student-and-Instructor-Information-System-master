@@ -16,8 +16,8 @@ export default class AddNewMsg extends Component{
         this.onSubmit = this.onSubmit.bind(this);
         this.state = {
             msg_title:'',
-            msg_description:'',
-            lecturer_name:''
+            msg_description:''
+
         }
     }
     onChangeMsg_title(e){
@@ -39,7 +39,7 @@ export default class AddNewMsg extends Component{
     onSubmit(){
         const obj = {
             msg_title : this.state.msg_title,
-            msg_description : this.state.msg_description,
+            msg_description : this.state.msg_description
             //lecturer_name : this.state.lecturer_name
         }
         axios.post('http://localhost:4000/msg/add',obj)
@@ -66,7 +66,7 @@ export default class AddNewMsg extends Component{
 
                     <tr>
                         <td><label><b>Message</b></label></td>
-                        <td><input
+                        <td><textarea
                         type="text"
                         placeholder="Enter your message"
                         value={this.state.msg_description}

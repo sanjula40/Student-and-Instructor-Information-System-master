@@ -11,9 +11,6 @@ const msgSchema = mongoose.Schema({
         type: String
     },
 
-    lecturer_name: {
-        type: String
-    }
 });
 
 module.exports = mongoose.model('Msg', msgSchema);

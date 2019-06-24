@@ -71,7 +71,7 @@ export default class updateMsg extends Component{
 
                     <tr>
                     <td><label>Message description</label></td>
-                    <td><input
+                    <td><textarea
                         type="text"
                         value={this.state.msg_description}
                         onChange={this.onChangeMsg_description}
