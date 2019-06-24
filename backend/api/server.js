@@ -11,6 +11,7 @@ const studentRoute = require('./route/studentRoutes');
 const assignmentRoute = require('../api/route/assignmentRoute');
 const materialRoute = require('../api/route/materialRoute');
 const msgRoutes = require('../api/route/msgRoutes');
+const assignmentSubmissionRoute = require('./route/assignmentSubmissionRoute');
 
 
 mongoose.Promise = global.Promise;
@@ -28,6 +29,7 @@ app.use('/student', studentRoute);
 app.use('/assignment', assignmentRoute);
 app.use('/material', materialRoute);
 app.use('/msg', msgRoutes);//first give this
+app.use('/assignmentSubmission', assignmentSubmissionRoute);
 
 
 
