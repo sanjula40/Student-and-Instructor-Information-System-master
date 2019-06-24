@@ -131,7 +131,7 @@ export default class AddSubmission extends Component{
                         <tr>
                             <td><label><b>Assignment Description</b></label></td>
                             <td><textarea
-                                type="date"
+                                type="text"
                                 placeholder="Description"
                                 value={this.state.description}
                                 onChange={this.onChangeDescription}

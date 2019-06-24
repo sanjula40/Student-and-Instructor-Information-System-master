@@ -12,6 +12,7 @@ import GetAllMsg from './LecturerDashboard/GetAllMsg';
 import updateMsg from './LecturerDashboard/updateMsg';
 import AddSubmission from './LecturerDashboard/AddSubmission';
 import AllSubmission from './LecturerDashboard/AllSubmission';
+import UpdateSub from './LecturerDashboard/UpdateSub';
 
 const Main = () => (
     <Switch>
@@ -27,6 +28,8 @@ const Main = () => (
         <Route path="/updateMsg/:id" component={updateMsg} />
         <Route path="/AddSubmission" component={AddSubmission} />
         <Route path="/AllSubmission" component={AllSubmission} />
+        <Route path="/UpdateSub/:id" component={UpdateSub} />
+
     </Switch>
 )
 
